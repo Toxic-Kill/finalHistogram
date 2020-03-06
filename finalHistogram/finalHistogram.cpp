@@ -22,12 +22,12 @@ int main()
 	{
 		histgram[m] = histgram[m] / (height*width);//计算各灰度出现概率
 	}
-	cv::Mat M1(1000, 800, CV_8UC3, Scalar(0, 0, 0));//创建图像
+	cv::Mat M1(600, 800, CV_8UC3, Scalar(0, 0, 0));//创建图像
 	cv::Point pt1, pt2, pt3;//建立x，y轴
 	pt1.x = 0;
-	pt1.y = 999;
+	pt1.y = 599;
 	pt2.x = 799;
-	pt2.y = 999;
+	pt2.y = 599;
 	pt3.x = 0;
 	pt3.y = 0;
 	line(M1, pt1, pt2, CV_RGB(255, 0, 0), 1, 8, 0);//画出x轴
@@ -36,9 +36,9 @@ int main()
 	{
 		cv::Point pt4, pt5;
 		pt4.x = 3 * n - 1;
-		pt4.y = 999;
+		pt4.y = 599;
 		pt5.x = 3 * n - 1;
-		pt5.y = histgram[n] * 1000;
+		pt5.y = 600 - histgram[n] * 600;
 		line(M1, pt4, pt5, CV_RGB(255, 0, 0), 1, 8, 0);
 	}
 	cv::imshow("histogram", M1);//显示直方图
